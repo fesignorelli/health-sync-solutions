@@ -715,7 +715,7 @@ nav {
 .form-group input {
   border: 1px solid #dde8d4;
   border-radius: 8px;
-  padding: 10px 14px;
+  padding: 7px 5px;
   font-size: var(--p);
   font-family: var(--font-body);
   outline: none;
@@ -857,4 +857,8 @@ nav {
 
 .animate-delay-4 {
   transition-delay: 0.4s;
+}
+
+.obrigatorio {
+  color: red;
 }
