@@ -33,6 +33,10 @@ body {
   color: #1a1a1a;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ── NAV ── */
 nav {
   display: flex;
