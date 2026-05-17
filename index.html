@@ -12,21 +12,24 @@
 
 <body>
 
-    <!-- NAV -->
     <nav>
         <a class="nav-logo" href="#">
             <img src="/img/logotipo.png" alt="Health Sync Solutions" />
         </a>
-        <ul class="nav-links">
+
+        <ul class="nav-links" id="nav-menu">
             <li><a href="#">Problemas</a></li>
             <li><a href="#">Solução</a></li>
             <li><a href="#">Passo a passo</a></li>
             <li><a href="#">Credencie-se</a></li>
             <li><button class="btn-primary">Agendar Demonstração</button></li>
         </ul>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+            <i data-lucide="menu"></i>
+        </button>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-text">
             <h1>Transforme o credenciamento médico com automação e segurança</h1>
@@ -46,18 +49,12 @@
         </div>
     </section>
 
-    <!-- MÉTRICAS -->
     <section class="metrics">
         <div class="metrics-grid">
 
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="4,20 12,12 20,18" stroke="#81ADC8" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <polyline points="14,22 22,14 32,8" stroke="#335C81" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                    <img src="/img/check.png" alt="check" />
                 </div>
                 <strong class="metric-value">100%</strong>
                 <p class="metric-desc">Conformidade garantida<br>em auditorias</p>
@@ -65,12 +62,7 @@
 
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="4,20 12,12 20,18" stroke="#81ADC8" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <polyline points="14,22 22,14 32,8" stroke="#335C81" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                    <img src="/img/check.png" alt="check" />
                 </div>
                 <strong class="metric-value">Dias</strong>
                 <p class="metric-desc">Transformados em horas<br>no onboarding médico</p>
@@ -78,12 +70,7 @@
 
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="4,20 12,12 20,18" stroke="#81ADC8" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <polyline points="14,22 22,14 32,8" stroke="#335C81" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                    <img src="/img/check.png" alt="check" />
                 </div>
                 <strong class="metric-value">0</strong>
                 <p class="metric-desc">Tolerância para documentação<br>irregular ou fraudes</p>
@@ -91,12 +78,7 @@
 
             <div class="metric-card">
                 <div class="metric-icon">
-                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polyline points="4,20 12,12 20,18" stroke="#81ADC8" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <polyline points="14,22 22,14 32,8" stroke="#335C81" stroke-width="3.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                    <img src="/img/check.png" alt="check" />
                 </div>
                 <strong class="metric-value">24/7</strong>
                 <p class="metric-desc">Monitoramento ativo de licenças<br>e registros</p>
@@ -111,14 +93,13 @@
                 <img src="/img/telemedicine-digital.png" alt="Laptop com sistema médico e estetoscópio" />
             </div>
             <div class="problem-text">
-                <h2>O risco operacional escondido na burocracia manual</h2>
+                <h1>O risco operacional escondido na burocracia manual</h1>
                 <p>Hospitais enfrentam multas, processos e riscos à segurança do paciente devido a falhas na verificação
                     de credenciais e documentos desatualizados.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROBLEMAS LISTA -->
     <section class="problems-list">
 
         <div class="problem-item">
@@ -126,7 +107,7 @@
                 <img src="/img/riscos.png" alt="Ícone riscos legais" />
             </div>
             <div class="problem-item-text">
-                <h2>Alta exposição a riscos legais</h2>
+                <h1>Alta exposição a riscos legais</h1>
                 <p>Profissionais atuando com registros inativos ou suspensos geram passivos gigantescos para a
                     instituição de saúde.</p>
             </div>
@@ -134,7 +115,7 @@
 
         <div class="problem-item reverse">
             <div class="problem-item-text">
-                <h2>Onboarding lento e trabalho manual</h2>
+                <h1>Onboarding lento e trabalho manual</h1>
                 <p>O processo manual de checar diplomas, especializações e antecedentes leva semanas, atrasando o início
                     dos plantões e travando a escala.</p>
             </div>
@@ -148,82 +129,80 @@
                 <img src="/img/fraude.png" alt="Ícone fraude" />
             </div>
             <div class="problem-item-text">
-                <h2>Desorganização e Fraude</h2>
+                <h1>Desorganização e Fraude</h1>
                 <p>Documentos físicos ou descentralizados facilitam a falsificação e dificultam o controle de
                     vencimentos de licenças importantes.</p>
             </div>
         </div>
     </section>
 
-    <!-- SOLUÇÃO INTRO -->
     <section class="solution-intro">
         <div class="solution-intro-inner">
             <div class="solution-intro-image">
                 <img src="/img/heart.png" alt="Mãos segurando coração com batimento cardíaco" />
             </div>
             <div class="solution-intro-text">
-                <h2>Onboarding ágil, seguro e em conformidade</h2>
+                <h1>Onboarding ágil, seguro e em conformidade</h1>
                 <p>Centralizamos o ciclo de vida do profissional de saúde na sua instituição com validações automáticas
                     direto nas fontes oficiais.</p>
             </div>
         </div>
     </section>
 
-    <!-- FUNCIONALIDADES -->
-    <section class="features">
+    <section class="problems-list">
 
-        <div class="feature-item">
-            <div class="feature-icon">
+        <div class="problem-item">
+            <div class="problem-item-icon">
                 <img src="/img/protection.png" alt="Ícone validação" />
             </div>
-            <div class="feature-text">
-                <h2>Validação em tempo real</h2>
+            <div class="problem-item-text">
+                <h1>Validação em tempo real</h1>
                 <p>Integração com Conselhos Regionais e Federais para checagem de status de registro.</p>
             </div>
         </div>
 
-        <div class="feature-item reverse">
-            <div class="feature-text">
-                <h2>Repositório digital inteligente</h2>
+        <div class="problem-item reverse">
+            <div class="problem-item-text">
+                <h1>Repositório digital inteligente</h1>
                 <p>Gestão centralizada de documentos com alertas automáticos de vencimento de licenças.</p>
             </div>
-            <div class="feature-icon">
+            <div class="problem-item-icon">
                 <img src="/img/sinal.png" alt="Ícone repositório" />
             </div>
         </div>
 
-        <div class="feature-item">
-            <div class="feature-icon">
+        <div class="problem-item">
+            <div class="problem-item-icon">
                 <img src="/img/leitura.png" alt="Ícone OCR" />
             </div>
-            <div class="feature-text">
-                <h2>Automação de leitura (OCR)</h2>
+            <div class="problem-item-text">
+                <h1>Automação de leitura (OCR)</h1>
                 <p>Extração de dados de diplomas e certificados em segundos, eliminando digitação manual.</p>
             </div>
         </div>
 
-        <div class="feature-item reverse">
-            <div class="feature-text">
-                <h2>Painel de Conformidade</h2>
+        <div class="problem-item reverse">
+            <div class="problem-item-text">
+                <h1>Painel de Conformidade</h1>
                 <p>Dashboard gerencial para visualizar rapidamente quem está apto para o plantão e quem possui
                     pendências.</p>
             </div>
-            <div class="feature-icon">
+            <div class="problem-item-icon">
                 <img src="/img/dashboard.png" alt="Ícone dashboard" />
             </div>
         </div>
+
     </section>
 
-    <!-- ETAPAS -->
     <section class="etapas">
         <div class="etapas-inner">
 
             <div class="etapas-text">
-                <h2>Cada etapa do credenciamento, sob controle.</h2>
+                <h1>Cada etapa do credenciamento, sob controle.</h1>
                 <p>A HealthSync estrutura cada etapa do credenciamento médico em uma plataforma digital única, auditável
                     e rastreável — para que instituições e médicos assumam o controle do processo, economizando tempo e
                     com menos burocracia.</p>
-                <button class="btn-outline-dark">Entrar em contato</button>
+                <button class="btn-primary">Entrar em contato</button>
             </div>
 
             <div class="etapas-image">
@@ -233,13 +212,11 @@
         </div>
     </section>
 
-    <!-- CTA + FORMULÁRIO -->
     <section class="cta-form">
         <div class="cta-form-inner">
 
-            <!-- ESQUERDA -->
             <div class="cta-text">
-                <h2>Pronto para ver o ROI da sua instituição?</h2>
+                <h1>Pronto para ver o ROI da sua instituição?</h1>
                 <p>Converse com um de nossos especialistas em gestão hospitalar. Sem pressão — apenas uma análise
                     honesta do que a HSS pode gerar para você.</p>
 
@@ -250,7 +227,7 @@
                             <i data-lucide="lock"></i>
                         </div>
                         <div class="cta-benefit-text">
-                            <strong>Dados protegidos por LGPD</strong>
+                            <h2>Dados protegidos por LGPD</h2>
                             <p>Suas informações são tratadas com total confidencialidade e nunca compartilhadas.</p>
                         </div>
                     </div>
@@ -260,7 +237,7 @@
                             <i data-lucide="zap"></i>
                         </div>
                         <div class="cta-benefit-text">
-                            <strong>Resposta em até 2h úteis</strong>
+                            <h2>Resposta em até 2h úteis</h2>
                             <p>Um especialista entra em contato para agendar sua demonstração personalizada.</p>
                         </div>
                     </div>
@@ -270,7 +247,7 @@
                             <i data-lucide="target"></i>
                         </div>
                         <div class="cta-benefit-text">
-                            <strong>Demo gratuita e sob medida</strong>
+                            <h2>Demo gratuita e sob medida</h2>
                             <p>Apresentação focada nos problemas específicos da sua instituição.</p>
                         </div>
                     </div>
@@ -278,9 +255,8 @@
                 </div>
             </div>
 
-            <!-- DIREITA: FORM -->
             <div class="cta-form-card">
-                <h2>Solicite uma demonstração</h2>
+                <h1>Solicite uma demonstração</h1>
                 <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
 
                 <form class="demo-form">
@@ -322,19 +298,18 @@
                         <input type="text" id="desafio" placeholder="" />
                     </div>
 
-                    <button type="submit" class="btn-primary btn-form">Solicitar demonstração</button>
+                    <button type="submit" class="btn-primary">Solicitar demonstração</button>
                 </form>
             </div>
 
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-inner">
 
             <div class="footer-brand">
-                <strong>Health Sync Solutions</strong>
+                <h2>Health Sync Solutions</h2>
                 <p>Transformando a gestão de saúde com tecnologia de ponta desde 2019.</p>
             </div>
 
@@ -377,6 +352,34 @@
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
     <script>lucide.createIcons();</script>
+
+    <script>
+        const toggle = document.getElementById('nav-toggle');
+        const menu = document.getElementById('nav-menu');
+        const icon = toggle.querySelector('i');
+
+        toggle.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle('open');
+            icon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                menu.classList.remove('open');
+                icon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }
+        });
+    </script>
 
 </body>
 
