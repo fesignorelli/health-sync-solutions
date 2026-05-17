@@ -44,6 +44,29 @@ emailjs.init('fbGJwvpgoIab7GSF9');
 
 const form = document.querySelector('.demo-form');
 
+/* verifica se já enviou */
+if (localStorage.getItem('hss_form_enviado')) {
+    form.innerHTML = `
+        <div style="text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;">
+            
+            <div style="width: 72px; height: 72px; background: #EAF7CF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5C7457" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+
+            <h2 style="font-family: 'Lora', Georgia, serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 12px;">
+                Solicitação já enviada!
+            </h2>
+
+            <p style="font-family: 'Hind Madurai', sans-serif; font-size: 16px; line-height: 1.7; color: #555; max-width: 320px; margin: 0;">
+                Já recebemos seus dados. Em breve um especialista entrará em contato.
+            </p>
+
+        </div>
+    `;
+}
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -63,34 +86,31 @@ form.addEventListener('submit', async (e) => {
 
     try {
         await emailjs.send('service_002wob6', 'template_czlxoj3', dados);
-
         await emailjs.send('service_002wob6', 'template_tv60m7s', dados);
 
+        /* salva no localStorage após envio bem-sucedido */
+        localStorage.setItem('hss_form_enviado', 'true');
+
         form.innerHTML = `
-    <div style="text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;">
-        
-        <div style="width: 72px; height: 72px; background: #EAF7CF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5C7457" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-        </div>
+            <div style="text-align: center; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 400px;">
+                
+                <div style="width: 72px; height: 72px; background: #EAF7CF; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#5C7457" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
 
-        <h2 style="font-family: 'Lora', Georgia, serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 12px;">
-            Solicitação enviada!
-        </h2>
+                <h2 style="font-family: 'Lora', Georgia, serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin: 0 0 12px;">
+                    Solicitação enviada!
+                </h2>
 
-        <p style="font-family: 'Hind Madurai', sans-serif; font-size: 16px; line-height: 1.7; color: #555; max-width: 320px; margin: 0 0 32px;">
-            Em breve um especialista entrará em contato.<br>
-            Verifique seu e-mail para a confirmação.
-        </p>
+                <p style="font-family: 'Hind Madurai', sans-serif; font-size: 16px; line-height: 1.7; color: #555; max-width: 320px; margin: 0 0 32px;">
+                    Em breve um especialista entrará em contato.<br>
+                    Verifique seu e-mail para a confirmação.
+                </p>
 
-        <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 280px;">
-
-            
-        </div>
-
-    </div>
-`;
+            </div>
+        `;
     } catch (err) {
         console.error(err);
         btn.textContent = 'Erro ao enviar. Tente novamente.';
