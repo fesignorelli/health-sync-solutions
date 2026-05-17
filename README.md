@@ -118,11 +118,3 @@ O layout é responsivo e adapta-se a diferentes tamanhos de tela:
 - ✅ Grid layout responsivo com `auto-fit`
 - ✅ Gradiente no footer com as cores da paleta
 
----
-
-## 👩‍💻 Desenvolvido por
-
-Feito com 💚 por **Fernanda Signorelli**  
-Designer UI/UX · Desenvolvedora Front-end
-
-[![GitHub](https://img.shields.io/badge/GitHub-fesignorelli-181717?style=flat&logo=github)](https://github.com/fesignorelli)
