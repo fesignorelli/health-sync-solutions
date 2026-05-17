@@ -71,6 +71,28 @@ nav {
   color: var(--color-green-mid);
 }
 
+.nav-links .btn-primary {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--color-green-mid);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: var(--p);
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.nav-links .btn-primary:hover {
+  background: #4a6045;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -166,9 +188,12 @@ nav {
 
 /* ── BOTÕES ── */
 .btn-primary {
+  appearance: none;
+  -webkit-appearance: none;
   background: var(--color-green-mid);
   color: #fff;
   border: none;
+  outline: none;
   padding: 12px 22px;
   border-radius: 30px;
   font-size: var(--p);
@@ -177,11 +202,21 @@ nav {
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
   background: #4a6045;
   transform: translateY(-1px);
+}
+
+a.btn-primary {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-secondary {
@@ -298,12 +333,13 @@ nav {
   border-radius: 20px;
   box-shadow: 0 8px 12px -4px var(--color-blue-soft);
   position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
 }
 
 .metric-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 20px -4px var(--color-blue-soft);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 28px -4px var(--color-blue-soft);
 }
 
 .metric-icon {

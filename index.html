@@ -22,7 +22,7 @@
             <li><a href="#solucao">Solução</a></li>
             <li><a href="#passo-a-passo">Passo a passo</a></li>
             <li><a href="#credencie-se">Credencie-se</a></li>
-            <li><button class="btn-primary">Agendar Demonstração</button></li>
+            <li><a class="btn-primary" href="#formulario">Agendar Demonstração</a></li>
         </ul>
 
         <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
@@ -38,7 +38,7 @@
                 profissionais de saúde, reduzindo fraudes operacionais e acelerando o onboarding em hospitais e
                 clínicas.</p>
             <div class="hero-actions">
-                <button class="btn-primary">Agendar Demonstração</button>
+                <a class="btn-primary" href="#formulario">Agendar Demonstração</a>
                 <button class="btn-secondary">Calcular ROI →</button>
             </div>
         </div>
@@ -207,7 +207,7 @@
                 <p>A HealthSync estrutura cada etapa do credenciamento médico em uma plataforma digital única, auditável
                     e rastreável — para que instituições e médicos assumam o controle do processo, economizando tempo e
                     com menos burocracia.</p>
-                <button class="btn-primary">Entrar em contato</button>
+                <a class="btn-primary" href="#formulario">Entrar em contato</a>
             </div>
 
             <div class="etapas-image">
@@ -265,7 +265,7 @@
                 <h1>Solicite uma demonstração</h1>
                 <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
 
-                <form class="demo-form">
+                <form class="demo-form" id="formulario">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="nome">Nome completo <span class="obrigatorio">*</span></label>
@@ -357,13 +357,8 @@
         </div>
     </footer>
 
-    <!-- 1º — Lucide -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-
-    <!-- 2º — EmailJS (deve vir antes do script.js) -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <!-- 3º — seu script -->
     <script src="script.js"></script>
 </body>
 
