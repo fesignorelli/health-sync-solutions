@@ -38,3 +38,36 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+
+/* ── FORMULÁRIO ── */
+const form = document.querySelector('.demo-form');
+
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    document.getElementById('replyto-hidden').value =
+        document.getElementById('email').value;
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+        form.innerHTML = `
+            <div style="text-align:center; padding: 40px 0;">
+                <p style="font-size: 48px;">✅</p>
+                <h2 style="margin: 16px 0 8px; font-family: var(--font-display);">Recebemos sua solicitação!</h2>
+                <p style="font-family: var(--font-body); color: #555;">Em breve um especialista entrará em contato.<br>Verifique seu e-mail para a confirmação.</p>
+            </div>
+        `;
+    } else {
+        btn.textContent = 'Erro ao enviar. Tente novamente.';
+        btn.disabled = false;
+    }
+});
