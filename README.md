@@ -198,6 +198,47 @@ emailjs.send('SERVICE_ID', 'TEMPLATE_ID', dados);
 
 ---
 
+## ♿ Acessibilidade
+
+Os seguintes recursos de acessibilidade foram implementados na landing page:
+
+### 🏷️ Semântica HTML
+- Uso de tags semânticas (`<nav>`, `<section>`, `<footer>`, `<form>`, `<label>`)
+- Hierarquia correta de headings (`h1`, `h2`, `h3`)
+- Atributos `alt` descritivos em todas as imagens
+
+### ⌨️ Navegação
+- Atributo `aria-label="Abrir menu"` no botão do menu hambúrguer
+- Links de navegação com âncoras (`href="#secao"`) para saltar diretamente às seções
+- `scroll-behavior: smooth` para rolagem suave entre seções
+
+### 📝 Formulário
+- Todos os campos possuem `<label>` associada via `for` e `id`
+- Campos obrigatórios marcados com `required` e indicador visual `*`
+- Feedback visual no estado de foco (`border-color` ao focar no input)
+- Mensagem clara de sucesso após envio
+- Botão desabilitado durante o envio para evitar cliques duplos
+
+### 🎨 Visual
+- Contraste de cores seguindo boas práticas entre texto e fundo
+- Tamanho mínimo de fonte de `13px` em todo o projeto
+- Hover states visíveis em todos os elementos interativos (botões, links, cards)
+- Animações respeitam a preferência do usuário com `prefers-reduced-motion`:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+```
+
+> 💡 Adicione esse bloco no `style.css` para respeitar usuários que configuram o sistema para reduzir animações.
+
+---
+
 ## ✨ Funcionalidades
 
 - ✅ Variáveis CSS globais (cores, tipografia, tamanhos)
