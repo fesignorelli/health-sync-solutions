@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+    
     <nav>
         <a class="nav-logo" href="#">
             <img src="/img/logotipo.png" alt="Health Sync Solutions" />
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="conteudo-principal">
         <div class="hero-text">
             <h1>Transforme o credenciamento médico com automação e segurança</h1>
             <p>A Health Sync Solutions digitaliza e automatiza a verificação de documentos e a conformidade de
@@ -40,7 +40,7 @@
                 clínicas.</p>
             <div class="hero-actions">
                 <a class="btn-primary" href="#formulario">Agendar Demonstração</a>
-                <button class="btn-secondary">Calcular ROI →</button>
+                <a class="btn-secondary" href="#calculadora-roi">Calcular ROI →</a>
             </div>
         </div>
         <div class="hero-image">
@@ -218,14 +218,186 @@
         </div>
     </section>
 
+    <!--
+  ============================================================
+  ONDE COLAR: no index.html, entre a section <etapas> e a
+  section <cta-form id="credencie-se">
+  ============================================================
+-->
+
+    <!-- CALCULADORA DE ROI -->
+    <section class="roi-section" id="calculadora-roi" aria-labelledby="roi-titulo">
+
+        <div class="roi-header animate">
+            <span class="roi-badge">Calculadora de ROI</span>
+            <h2 id="roi-titulo">Quanto sua instituição pode economizar?</h2>
+            <p>Ajuste os dados da sua realidade e veja o impacto financeiro real da automação de credenciamento.</p>
+        </div>
+
+        <div class="roi-inner">
+
+            <!-- PAINEL DE INPUTS -->
+            <div class="roi-inputs animate" role="group" aria-labelledby="roi-inputs-titulo">
+                <h3 id="roi-inputs-titulo" class="roi-panel-title">Dados da sua instituição</h3>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="medicos">Médicos credenciados por ano</label>
+                        <output class="roi-value-display" id="medicos-val" for="medicos">50</output>
+                    </div>
+                    <input type="range" id="medicos" name="medicos" min="5" max="500" step="5" value="50"
+                        aria-valuemin="5" aria-valuemax="500" aria-valuenow="50" aria-describedby="medicos-desc" />
+                    <span class="roi-range-labels" id="medicos-desc" aria-hidden="true">
+                        <span>5</span><span>500</span>
+                    </span>
+                </div>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="dias">Dias atuais por credenciamento</label>
+                        <output class="roi-value-display" id="dias-val" for="dias">30 dias</output>
+                    </div>
+                    <input type="range" id="dias" name="dias" min="5" max="90" step="1" value="30" aria-valuemin="5"
+                        aria-valuemax="90" aria-valuenow="30" aria-describedby="dias-desc" />
+                    <span class="roi-range-labels" id="dias-desc" aria-hidden="true">
+                        <span>5 dias</span><span>90 dias</span>
+                    </span>
+                </div>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="horas">Horas de equipe por credenciamento</label>
+                        <output class="roi-value-display" id="horas-val" for="horas">12 h</output>
+                    </div>
+                    <input type="range" id="horas" name="horas" min="2" max="60" step="1" value="12" aria-valuemin="2"
+                        aria-valuemax="60" aria-valuenow="12" aria-describedby="horas-desc" />
+                    <span class="roi-range-labels" id="horas-desc" aria-hidden="true">
+                        <span>2 h</span><span>60 h</span>
+                    </span>
+                </div>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="custo-hora">Custo/hora da equipe administrativa</label>
+                        <output class="roi-value-display" id="custo-hora-val" for="custo-hora">R$ 65/h</output>
+                    </div>
+                    <input type="range" id="custo-hora" name="custo-hora" min="20" max="250" step="5" value="65"
+                        aria-valuemin="20" aria-valuemax="250" aria-valuenow="65" aria-describedby="custo-hora-desc" />
+                    <span class="roi-range-labels" id="custo-hora-desc" aria-hidden="true">
+                        <span>R$ 20</span><span>R$ 250</span>
+                    </span>
+                </div>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="incidentes">Incidentes com documentação irregular/ano</label>
+                        <output class="roi-value-display" id="incidentes-val" for="incidentes">4</output>
+                    </div>
+                    <input type="range" id="incidentes" name="incidentes" min="0" max="50" step="1" value="4"
+                        aria-valuemin="0" aria-valuemax="50" aria-valuenow="4" aria-describedby="incidentes-desc" />
+                    <span class="roi-range-labels" id="incidentes-desc" aria-hidden="true">
+                        <span>0</span><span>50</span>
+                    </span>
+                </div>
+
+                <div class="roi-field">
+                    <div class="roi-field-header">
+                        <label for="custo-incidente">Custo médio por incidente (multa/processo)</label>
+                        <output class="roi-value-display" id="custo-incidente-val" for="custo-incidente">R$
+                            15.000</output>
+                    </div>
+                    <input type="range" id="custo-incidente" name="custo-incidente" min="500" max="200000" step="500"
+                        value="15000" aria-valuemin="500" aria-valuemax="200000" aria-valuenow="15000"
+                        aria-describedby="custo-incidente-desc" />
+                    <span class="roi-range-labels" id="custo-incidente-desc" aria-hidden="true">
+                        <span>R$ 500</span><span>R$ 200k</span>
+                    </span>
+                </div>
+
+                <p class="roi-disclaimer">
+                    <i data-lucide="info" aria-hidden="true"></i>
+                    Cálculo baseado em redução de 87% no tempo de equipe e 95% em incidentes com o uso da HSS.
+                </p>
+            </div>
+
+            <!-- PAINEL DE RESULTADOS -->
+            <div class="roi-results animate animate-delay-2" aria-live="polite" aria-atomic="true">
+                <h3 class="roi-panel-title">Sua estimativa de economia</h3>
+
+                <div class="roi-result-cards">
+
+                    <div class="roi-card roi-card-horas">
+                        <i data-lucide="clock" aria-hidden="true"></i>
+                        <div class="roi-card-body">
+                            <span class="roi-card-label">Horas economizadas/ano</span>
+                            <strong class="roi-card-value" id="res-horas">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="roi-card roi-card-equipe">
+                        <i data-lucide="users" aria-hidden="true"></i>
+                        <div class="roi-card-body">
+                            <span class="roi-card-label">Economia com equipe/ano</span>
+                            <strong class="roi-card-value" id="res-equipe">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="roi-card roi-card-risco">
+                        <i data-lucide="shield-check" aria-hidden="true"></i>
+                        <div class="roi-card-body">
+                            <span class="roi-card-label">Economia em riscos legais/ano</span>
+                            <strong class="roi-card-value" id="res-risco">—</strong>
+                        </div>
+                    </div>
+
+                    <div class="roi-card roi-card-total">
+                        <i data-lucide="trending-up" aria-hidden="true"></i>
+                        <div class="roi-card-body">
+                            <span class="roi-card-label">Total economizado/ano</span>
+                            <strong class="roi-card-value" id="res-total">—</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ROI DESTAQUE -->
+                <div class="roi-highlight" aria-label="Indicadores principais de retorno">
+                    <div class="roi-highlight-item">
+                        <span class="roi-highlight-label">ROI estimado</span>
+                        <strong class="roi-highlight-value" id="res-roi">—</strong>
+                    </div>
+                    <div class="roi-highlight-divider" aria-hidden="true"></div>
+                    <div class="roi-highlight-item">
+                        <span class="roi-highlight-label">Payback em</span>
+                        <strong class="roi-highlight-value" id="res-payback">—</strong>
+                    </div>
+                    <div class="roi-highlight-divider" aria-hidden="true"></div>
+                    <div class="roi-highlight-item">
+                        <span class="roi-highlight-label">Tempo de onboarding</span>
+                        <strong class="roi-highlight-value" id="res-tempo">2 dias</strong>
+                    </div>
+                </div>
+
+                <p class="roi-invest-note">
+                    * Considera investimento médio de <strong>R$ 2.990/mês</strong> no plano HSS Enterprise.
+                </p>
+
+                <a class="btn-primary roi-cta" href="#formulario">
+                    Quero essa economia
+                </a>
+            </div>
+
+        </div>
+    </section>
+
     <!-- CTA + FORMULÁRIO -->
     <section class="cta-form" id="credencie-se">
         <div class="cta-form-inner">
 
             <div class="cta-text animate">
-                <h1>Pronto para ver o ROI da sua instituição?</h1>
-                <p>Converse com um de nossos especialistas em gestão hospitalar. Sem pressão — apenas uma análise
-                    honesta do que a HSS pode gerar para você.</p>
+                <h1>Pronto para ver o ROI da sua instituição aplicado na prática?</h1>
+                <p>Converse com um de nossos especialistas em gestão hospitalar. Sem pressão — apenas uma negociação
+                    honesta com o que a HSS pode gerar para você.</p>
 
                 <div class="cta-benefits">
 
@@ -245,7 +417,7 @@
                         </div>
                         <div class="cta-benefit-text">
                             <h2>Resposta em até 2h úteis</h2>
-                            <p>Um especialista entra em contato para agendar sua demonstração personalizada.</p>
+                            <p>Um especialista entra em contato para negociação personalizada.</p>
                         </div>
                     </div>
 
@@ -263,7 +435,7 @@
             </div>
 
             <div class="cta-form-card animate animate-delay-2">
-                <h1>Solicite uma demonstração</h1>
+                <h1>Solicite uma negociação</h1>
                 <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
 
                 <form class="demo-form" id="formulario">
@@ -305,7 +477,7 @@
                         <input type="text" name="desafio" id="desafio" />
                     </div>
 
-                    <button type="submit" class="btn-primary">Solicitar demonstração</button>
+                    <button type="submit" class="btn-primary">Quero elevar meus resultados</button>
                 </form>
             </div>
 

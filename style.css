@@ -911,3 +911,341 @@ a.btn-primary {
 .obrigatorio {
   color: red;
 }
+
+/* --- Mensagem de erro do formulário --- */
+.campo-erro {
+  display: block;
+  color: #c0392b;
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+  font-family: var(--font-body);
+}
+
+/* ── CALCULADORA DE ROI ── */
+.roi-section {
+  background: var(--color-cream);
+  padding: 80px 64px;
+  position: relative;
+}
+
+/* --- Header da section --- */
+.roi-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.roi-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  background: var(--color-lime-light);
+  border: 1px solid var(--color-green-mid);
+  border-radius: 100px;
+  color: var(--color-green-mid);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.roi-header h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.roi-header p {
+  font-family: var(--font-body);
+  font-size: var(--p);
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- Layout dos dois painéis --- */
+.roi-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.roi-panel-title {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-deep);
+  margin-bottom: 24px;
+}
+
+/* --- Painel de Inputs --- */
+.roi-inputs {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 12px -4px var(--color-blue-soft);
+}
+
+.roi-field {
+  margin-bottom: 24px;
+}
+
+.roi-field:last-of-type {
+  margin-bottom: 0;
+}
+
+.roi-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.roi-field label {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #444;
+  font-weight: 400;
+}
+
+.roi-value-display {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-blue-deep);
+  white-space: nowrap;
+}
+
+/* Slider — accent verde do site */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: #dde8d4;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  accent-color: var(--color-green-mid);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: var(--color-green-mid);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(92, 116, 87, 0.18);
+  transition: box-shadow 0.2s;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb,
+input[type="range"]:hover::-webkit-slider-thumb {
+  box-shadow: 0 0 0 7px rgba(92, 116, 87, 0.28);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: var(--color-green-mid);
+  border: none;
+  border-radius: 50%;
+}
+
+.roi-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+  font-family: var(--font-body);
+}
+
+.roi-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #888;
+  margin-top: 24px;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.roi-disclaimer svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-blue-soft);
+}
+
+/* --- Painel de Resultados --- */
+.roi-results {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 8px 12px -4px var(--color-blue-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roi-result-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Cards de resultado — mesmo fundo lime-light dos .cta-benefit-item */
+.roi-card {
+  background: var(--color-lime-light);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.roi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px -4px rgba(129, 173, 200, 0.4);
+}
+
+.roi-card svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Ícone de cada card com cores do site */
+.roi-card-horas  svg { color: var(--color-blue-soft); }
+.roi-card-equipe svg { color: var(--color-green-mid); }
+.roi-card-risco  svg { color: var(--color-blue-deep); }
+.roi-card-total  svg { color: #8B5CF6; }
+
+.roi-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roi-card-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #666;
+  line-height: 1.3;
+}
+
+.roi-card-value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-blue-deep);
+}
+
+/* --- Bloco de destaque (ROI % + Payback + Tempo) --- */
+.roi-highlight {
+  display: flex;
+  background: var(--color-blue-deep);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.roi-highlight-item {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.roi-highlight-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 12px 0;
+}
+
+.roi-highlight-label {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-blue-soft);
+  font-weight: 600;
+}
+
+.roi-highlight-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.roi-invest-note {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.roi-invest-note strong {
+  color: var(--color-green-mid);
+}
+
+.roi-cta {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+/* ── RESPONSIVO — mesmo breakpoint 900px do restante do site ── */
+@media (max-width: 900px) {
+  .roi-section {
+    padding: 48px 24px;
+  }
+
+  .roi-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .roi-inputs,
+  .roi-results {
+    padding: 28px 20px;
+  }
+
+  .roi-result-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .roi-result-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .roi-highlight {
+    flex-direction: column;
+  }
+
+  .roi-highlight-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+}
