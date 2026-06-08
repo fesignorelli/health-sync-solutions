@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    
+
+    <!-- SKIP LINK (acessibilidade) -->
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
     <nav>
         <a class="nav-logo" href="#">
             <img src="/img/logotipo.png" alt="Health Sync Solutions" />
@@ -22,11 +25,13 @@
             <li><a href="#problemas">Problemas</a></li>
             <li><a href="#solucao">Solução</a></li>
             <li><a href="#passo-a-passo">Passo a passo</a></li>
+            <!-- ADICIONADO: Calculadora ROI no menu -->
+            <li><a href="#calculadora-roi">Calculadora ROI</a></li>
             <li><a href="#credencie-se">Credencie-se</a></li>
             <li><a class="btn-primary" href="#formulario">Agendar Demonstração</a></li>
         </ul>
 
-        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
             <i data-lucide="menu"></i>
         </button>
     </nav>
@@ -35,9 +40,9 @@
     <section class="hero" id="conteudo-principal">
         <div class="hero-text">
             <h1>Transforme o credenciamento médico com automação e segurança</h1>
-            <p>A Health Sync Solutions digitaliza e automatiza a verificação de documentos e a conformidade de
-                profissionais de saúde, reduzindo fraudes operacionais e acelerando o onboarding em hospitais e
-                clínicas.</p>
+            <!-- CORRIGIDO: parágrafo orientado ao benefício do cliente, não ao produto -->
+            <p>Reduza semanas de burocracia a horas, elimine riscos legais por documentação irregular e mantenha
+                sua equipe focada no que importa — com validação automática direto nos conselhos de saúde.</p>
             <div class="hero-actions">
                 <a class="btn-primary" href="#formulario">Agendar Demonstração</a>
                 <a class="btn-secondary" href="#calculadora-roi">Calcular ROI →</a>
@@ -60,12 +65,13 @@
                 <p class="metric-desc">Conformidade garantida<br>em auditorias</p>
             </div>
 
+            <!-- CORRIGIDO: "Dias" virou "7x" — métrica real e comparável -->
             <div class="metric-card animate animate-delay-2">
                 <div class="metric-icon">
                     <img src="/img/check.png" alt="check" />
                 </div>
-                <strong class="metric-value">Dias</strong>
-                <p class="metric-desc">Transformados em horas<br>no onboarding médico</p>
+                <strong class="metric-value">7×</strong>
+                <p class="metric-desc">Mais rápido no<br>onboarding médico</p>
             </div>
 
             <div class="metric-card animate animate-delay-3">
@@ -208,7 +214,8 @@
                 <p>A HealthSync estrutura cada etapa do credenciamento médico em uma plataforma digital única, auditável
                     e rastreável — para que instituições e médicos assumam o controle do processo, economizando tempo e
                     com menos burocracia.</p>
-                <a class="btn-primary" href="#formulario">Entrar em contato</a>
+                <!-- CORRIGIDO: CTA mais específico e orientado ao próximo passo -->
+                <a class="btn-primary" href="#calculadora-roi">Ver quanto posso economizar →</a>
             </div>
 
             <div class="etapas-image">
@@ -217,13 +224,6 @@
 
         </div>
     </section>
-
-    <!--
-  ============================================================
-  ONDE COLAR: no index.html, entre a section <etapas> e a
-  section <cta-form id="credencie-se">
-  ============================================================
--->
 
     <!-- CALCULADORA DE ROI -->
     <section class="roi-section" id="calculadora-roi" aria-labelledby="roi-titulo">
@@ -236,7 +236,6 @@
 
         <div class="roi-inner">
 
-            <!-- PAINEL DE INPUTS -->
             <div class="roi-inputs animate" role="group" aria-labelledby="roi-inputs-titulo">
                 <h3 id="roi-inputs-titulo" class="roi-panel-title">Dados da sua instituição</h3>
 
@@ -303,8 +302,7 @@
                 <div class="roi-field">
                     <div class="roi-field-header">
                         <label for="custo-incidente">Custo médio por incidente (multa/processo)</label>
-                        <output class="roi-value-display" id="custo-incidente-val" for="custo-incidente">R$
-                            15.000</output>
+                        <output class="roi-value-display" id="custo-incidente-val" for="custo-incidente">R$ 15.000</output>
                     </div>
                     <input type="range" id="custo-incidente" name="custo-incidente" min="500" max="200000" step="500"
                         value="15000" aria-valuemin="500" aria-valuemax="200000" aria-valuenow="15000"
@@ -320,12 +318,10 @@
                 </p>
             </div>
 
-            <!-- PAINEL DE RESULTADOS -->
             <div class="roi-results animate animate-delay-2" aria-live="polite" aria-atomic="true">
                 <h3 class="roi-panel-title">Sua estimativa de economia</h3>
 
                 <div class="roi-result-cards">
-
                     <div class="roi-card roi-card-horas">
                         <i data-lucide="clock" aria-hidden="true"></i>
                         <div class="roi-card-body">
@@ -333,7 +329,6 @@
                             <strong class="roi-card-value" id="res-horas">—</strong>
                         </div>
                     </div>
-
                     <div class="roi-card roi-card-equipe">
                         <i data-lucide="users" aria-hidden="true"></i>
                         <div class="roi-card-body">
@@ -341,7 +336,6 @@
                             <strong class="roi-card-value" id="res-equipe">—</strong>
                         </div>
                     </div>
-
                     <div class="roi-card roi-card-risco">
                         <i data-lucide="shield-check" aria-hidden="true"></i>
                         <div class="roi-card-body">
@@ -349,7 +343,6 @@
                             <strong class="roi-card-value" id="res-risco">—</strong>
                         </div>
                     </div>
-
                     <div class="roi-card roi-card-total">
                         <i data-lucide="trending-up" aria-hidden="true"></i>
                         <div class="roi-card-body">
@@ -357,10 +350,8 @@
                             <strong class="roi-card-value" id="res-total">—</strong>
                         </div>
                     </div>
-
                 </div>
 
-                <!-- ROI DESTAQUE -->
                 <div class="roi-highlight" aria-label="Indicadores principais de retorno">
                     <div class="roi-highlight-item">
                         <span class="roi-highlight-label">ROI estimado</span>
@@ -382,8 +373,9 @@
                     * Considera investimento médio de <strong>R$ 2.990/mês</strong> no plano HSS Enterprise.
                 </p>
 
+                <!-- CORRIGIDO: CTA específico e orientado à ação seguinte -->
                 <a class="btn-primary roi-cta" href="#formulario">
-                    Quero essa economia
+                    Quero essa economia → Falar com especialista
                 </a>
             </div>
 
@@ -395,12 +387,12 @@
         <div class="cta-form-inner">
 
             <div class="cta-text animate">
-                <h1>Pronto para ver o ROI da sua instituição aplicado na prática?</h1>
-                <p>Converse com um de nossos especialistas em gestão hospitalar. Sem pressão — apenas uma negociação
-                    honesta com o que a HSS pode gerar para você.</p>
+                <!-- CORRIGIDO: título mais curto e direto, sem redundância com a calculadora -->
+                <h1>Veja a HSS funcionando na sua realidade</h1>
+                <p>Converse com um especialista em gestão hospitalar. Sem compromisso — apenas uma demonstração
+                    personalizada do impacto real para a sua instituição.</p>
 
                 <div class="cta-benefits">
-
                     <div class="cta-benefit-item">
                         <div class="cta-benefit-icon">
                             <i data-lucide="lock"></i>
@@ -410,17 +402,15 @@
                             <p>Suas informações são tratadas com total confidencialidade e nunca compartilhadas.</p>
                         </div>
                     </div>
-
                     <div class="cta-benefit-item">
                         <div class="cta-benefit-icon">
                             <i data-lucide="zap"></i>
                         </div>
                         <div class="cta-benefit-text">
                             <h2>Resposta em até 2h úteis</h2>
-                            <p>Um especialista entra em contato para negociação personalizada.</p>
+                            <p>Um especialista entra em contato para agendar sua demonstração personalizada.</p>
                         </div>
                     </div>
-
                     <div class="cta-benefit-item">
                         <div class="cta-benefit-icon">
                             <i data-lucide="target"></i>
@@ -430,12 +420,12 @@
                             <p>Apresentação focada nos problemas específicos da sua instituição.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
 
             <div class="cta-form-card animate animate-delay-2">
-                <h1>Solicite uma negociação</h1>
+                <!-- CORRIGIDO: "negociação" → "demonstração" -->
+                <h1>Solicite uma demonstração</h1>
                 <p>Preencha os dados abaixo e entraremos em contato em breve.</p>
 
                 <form class="demo-form" id="formulario">
@@ -477,7 +467,8 @@
                         <input type="text" name="desafio" id="desafio" />
                     </div>
 
-                    <button type="submit" class="btn-primary">Quero elevar meus resultados</button>
+                    <!-- CORRIGIDO: botão com texto claro sobre o que acontece após clicar -->
+                    <button type="submit" class="btn-primary">Agendar minha demonstração gratuita</button>
                 </form>
             </div>
 
@@ -498,7 +489,8 @@
                 <ul>
                     <li><a href="#">Gestão de Agenda</a></li>
                     <li><a href="#">Automação de Processos</a></li>
-                    <li><a href="#">Calculadora de ROI</a></li>
+                    <!-- CORRIGIDO: link aponta para a section real -->
+                    <li><a href="#calculadora-roi">Calculadora de ROI</a></li>
                     <li><a href="#">Integrações</a></li>
                 </ul>
             </div>

@@ -921,9 +921,44 @@ a.btn-primary {
   font-family: var(--font-body);
 }
 
+/* ============================================================
+   SUBSTITUIR o bloco da calculadora no style.css
+   (do comentário "Calculadora de ROI" até o fim do arquivo)
+   Cores e padrões alinhados ao restante do site
+   ============================================================ */
+
+/* --- Skip Link (acessibilidade) --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-green-mid);
+  color: #fff;
+  border-radius: 0 0 6px 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 9999;
+  transition: top 0.2s;
+  text-decoration: none;
+  font-family: var(--font-heading);
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* --- Mensagem de erro do formulário --- */
+.campo-erro {
+  display: block;
+  color: #c0392b;
+  font-size: 0.78rem;
+  margin-top: 0.25rem;
+  font-family: var(--font-body);
+}
+
 /* ── CALCULADORA DE ROI ── */
 .roi-section {
-  background: var(--color-cream);
+  background: var(--color-cream); 
   padding: 80px 64px;
   position: relative;
 }
@@ -968,7 +1003,7 @@ a.btn-primary {
 /* --- Layout dos dois painéis --- */
 .roi-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;  
   gap: 48px;
   max-width: 1280px;
   margin: 0 auto;
@@ -987,7 +1022,7 @@ a.btn-primary {
 /* --- Painel de Inputs --- */
 .roi-inputs {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 20px; 
   padding: 36px 32px;
   box-shadow: 0 8px 12px -4px var(--color-blue-soft);
 }
@@ -1022,7 +1057,6 @@ a.btn-primary {
   white-space: nowrap;
 }
 
-/* Slider — accent verde do site */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -1088,7 +1122,6 @@ input[type="range"]::-moz-range-thumb {
   color: var(--color-blue-soft);
 }
 
-/* --- Painel de Resultados --- */
 .roi-results {
   background: #fff;
   border-radius: 20px;
@@ -1105,7 +1138,6 @@ input[type="range"]::-moz-range-thumb {
   gap: 12px;
 }
 
-/* Cards de resultado — mesmo fundo lime-light dos .cta-benefit-item */
 .roi-card {
   background: var(--color-lime-light);
   border-radius: 12px;
@@ -1148,16 +1180,15 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .roi-card-value {
-  font-family: var(--font-display);
+  font-family: var(--font-display); 
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-blue-deep);
 }
 
-/* --- Bloco de destaque (ROI % + Payback + Tempo) --- */
 .roi-highlight {
   display: flex;
-  background: var(--color-blue-deep);
+  background: var(--color-blue-deep); 
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1213,39 +1244,58 @@ input[type="range"]::-moz-range-thumb {
   margin-top: auto;
 }
 
-/* ── RESPONSIVO — mesmo breakpoint 900px do restante do site ── */
 @media (max-width: 900px) {
   .roi-section {
-    padding: 48px 24px;
+    padding: 48px 24px;  
   }
 
   .roi-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;     
     gap: 24px;
   }
 
   .roi-inputs,
   .roi-results {
-    padding: 28px 20px;
+    padding: 28px 20px; 
   }
 
   .roi-result-cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; 
   }
 }
 
 @media (max-width: 480px) {
-  .roi-result-cards {
-    grid-template-columns: 1fr;
+ 
+  .roi-cta,
+  .demo-form .btn-primary {
+    white-space: normal;
+    line-height: 1.4;
+    padding: 14px 16px;
+    text-align: center;
   }
-
-  .roi-highlight {
-    flex-direction: column;
+ 
+  .cta-form {
+    padding: 40px 12px;
   }
-
-  .roi-highlight-divider {
+ 
+  .cta-form-card {
+    padding: 24px 14px;
+  }
+ 
+  .form-group input {
     width: 100%;
-    height: 1px;
-    margin: 0;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+ 
+  .roi-section {
+    padding: 48px 12px;
+  }
+ 
+  .roi-inputs,
+  .roi-results {
+    padding: 20px 14px;
+    width: 100%;
+    box-sizing: border-box;
   }
 }
